@@ -1,7 +1,7 @@
-# TaskFlow backend
+# TaskFlow
 
-TaskFlow is a beginner-friendly Flask REST API backed by SQLite. This project
-contains only the database and backend; it does not include a frontend.
+TaskFlow is a beginner-friendly task manager with a Flask REST API, a simple
+browser interface, and a SQLite database.
 
 ## Project files
 
@@ -14,8 +14,9 @@ contains only the database and backend; it does not include a frontend.
   are stored as Werkzeug password hashes, never as plain text.
 - `backend/routes/tasks.py` implements authenticated task CRUD and validates
   task fields and statuses.
-- `backend/app.py` configures Flask, initializes `database/taskflow.db`, and
-  registers the API routes.
+- `backend/app.py` configures Flask, serves the frontend, initializes
+  `database/taskflow.db`, and registers the API routes.
+- `frontend/` contains the browser interface and its styles and behavior.
 - `requirements.txt` lists the Python package dependency.
 - `.gitignore` excludes the local SQLite database and Python-generated files.
 
@@ -30,6 +31,8 @@ python -m venv .venv
 pip install -r requirements.txt
 python -m backend.app
 ```
+
+Open `http://127.0.0.1:5000/` to use TaskFlow.
 
 The database is created automatically at `database/taskflow.db` when the app
 starts. Set `TASKFLOW_SECRET_KEY` to a private random value before deployment;
