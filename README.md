@@ -54,3 +54,6 @@ routes. `POST /api/logout` clears the session.
 Allowed statuses are `To Do`, `In Progress`, and `Done`. Task routes return
 `401` when the client is not logged in, `404` when the task does not exist for
 that user, and `400` for invalid input. A duplicate username returns `409`.
+# Practice
+
+Mga Bakal
